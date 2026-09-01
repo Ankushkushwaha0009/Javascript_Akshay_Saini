@@ -1,11 +1,9 @@
 function outer() {
   let count = 0; // outer variable
-
   function inner() {
     count++; // inner function "closes over" count
     console.log(count);
   }
-
   return inner;
 }
 
