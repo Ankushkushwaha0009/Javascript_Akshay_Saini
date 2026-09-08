@@ -64,6 +64,7 @@ const a = 20;
 {
   const a = 100;
   {
+    // it will not find a here then it will go to next scipe to finf value
     console.log(a);
   }
 }
