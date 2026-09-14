@@ -1,9 +1,5 @@
-getName() ; 
-console.log(x) ;
-console.log(getName) ; 
-
-var x = 10 ; 
-
-function getName() {
-    console.log("Namste Javacsript")  ; 
-}
+// for (let i = 1; i <= 3; i++) {
+// //   setTimeout(() => {
+// //     console.log(i); //1 2 3
+// //   }, 1000);
+// // }

@@ -1,3 +1,9 @@
+/*
+During the creation phase of an execution context,
+JavaScript creates bindings for declarations before 
+executing the code.
+*/
+
 // var x = 7 ; 
 
 // function getName() {
@@ -40,12 +46,12 @@
 
 //-----------------------------------
 
-// getName()  ; // getName is not a function ....
-// console.log(x) ; //undefined 
-// console.log(getName) ; //undefined 
-// var x = 10 ; 
-// var getName = () =>  {
-//     console.log("Namste Javascript")  ; 
-// }
+getName()  ; // getName is not a function ....
+console.log(x) ; //undefined 
+console.log(getName) ; //undefined 
+var x = 10 ; 
+var getName = () =>  {
+    console.log("Namste Javascript")  ; 
+}
 
 //---------------------------------
