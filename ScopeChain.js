@@ -33,10 +33,74 @@ function a to read its local variables.
 // }
 // a()  ;
 
-function a() {
-  var x = 10;
-  b();
-  function b() {}
-}
-a();
-// console.log(x); 
+// function a() {
+//   var x = 10; //outside this function we will not able to access this x variable
+//   b();
+//   function b() {}
+// }
+// a();
+// console.log(x); //reference error : Not defined
+
+//---------------------------------
+//Global Scope...
+
+// let Name = "ankush kushwaha" ;
+// function hello() {
+//   Bye()  ;
+//   function Bye() {
+//     console.log(Name) ; 
+//   }
+// }
+// hello() ;
+
+//-------------------------------- 
+
+//var is functional scoped
+
+// function test() {
+//   var x = 10  ;
+//   console.log(x) ; 
+// }
+// test() ; 
+// console.log(x) ; //reference error .....
+
+//-------------------------------------------
+
+//Block Scoped (let and const are blocked scoped...)
+
+// if(true)  {
+//   let x = 10 ; //we can acess this inside the block only
+//   var y = 20 ; 
+//   // console.log(x) ; 
+//   console.log(y) ; //here we can acess 
+//   //lets try to access this variable x here .....
+//    {
+//       console.log(x) ; //we can acess here ....
+//    }
+// }
+// console.log(y) ; //here also we can acccess
+
+//--------------------------------------------
+
+// since if crate the block but not a function , var scapes the block ...
+// if (true) {
+//     var a = 10; // fucntion scope
+//     let b = 20; // block scope
+// }
+// console.log(a); // 10
+// console.log(b); // reference error
+
+//----------------------------------------
+
+// for (var i = 0; i < 3; i++) {
+//     console.log(i);
+// }
+// console.log(i); // it will print 3 becuase var isnt't blocked scope
+
+//-----------------------------------
+
+// for (let i = 0; i < 3; i++) {
+//     console.log(i);
+// }
+
+// console.log(i); // reference error we cannot acess outside the block...
