@@ -64,15 +64,29 @@
 
 //-------------------------
 
-function z() {
-  var b = 900  ; 
-  function x() {
-    var a = 9;
-    function y() {
-      console.log(a , b);
-    }
-    y() ; 
+// function z() {
+//   var b = 900  ; 
+//   function x() {
+//     var a = 9;
+//     function y() {
+//       console.log(a , b);
+//     }
+//     y() ; 
+//   }
+//   x() ; 
+// }
+// z() ; // 9 100
+
+function Outer() {
+  let count = 0 ; 
+  function inner() {
+      count++ ; 
+      console.log(count) ; 
   }
-  x() ; 
+  return inner ; 
 }
-z() ; // 9 100
+
+const callingTheFunctions = Outer() ; 
+callingTheFunctions() ; 
+callingTheFunctions() ; 
+callingTheFunctions() ; 

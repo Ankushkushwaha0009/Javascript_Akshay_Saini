@@ -71,6 +71,7 @@ binding, so each callback captures a different value: 1, 2, and 3
 // }
 
 //------------------------
+
 //Even with 0ms, B waits until the current synchronous code finishes.
 console.log("A");
 setTimeout(() => {
