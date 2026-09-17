@@ -48,7 +48,7 @@
 // console.log(z);
 // z(); // here it will print the 9 becuase it is remeber it lexical scope we will not get error
 
-//------------------------------
+//----------------------------------
 
 // function x() {
 //   var a = 9;
@@ -62,7 +62,7 @@
 // console.log(z);
 // z(); // it will print 100 not 9
 
-//-------------------------
+//----------------------------------
 
 // function z() {
 //   var b = 900  ; 
@@ -77,6 +77,28 @@
 // }
 // z() ; // 9 100
 
+//------------------------------------
+
+// function Outer() {
+//   let count = 0 ; 
+//   function inner() {
+//       count++ ; 
+//       console.log(count) ; 
+//   }
+//   return inner ; 
+// }
+
+// const callingTheFunctions = Outer() ; 
+// callingTheFunctions() ; 
+// callingTheFunctions() ; 
+// callingTheFunctions() ; 
+
+//-------------------------------------
+
+/*
+Every time you execute Outer(), a brand-new, isolated enclosure with its own count variable is created.
+If you call Outer() a second time and save it to a new variable, it gets its own fresh counter
+*/
 function Outer() {
   let count = 0 ; 
   function inner() {
@@ -86,7 +108,13 @@ function Outer() {
   return inner ; 
 }
 
-const callingTheFunctions = Outer() ; 
-callingTheFunctions() ; 
-callingTheFunctions() ; 
-callingTheFunctions() ; 
+const counterA = Outer();
+const counterB = Outer();
+
+//counter A and counter B both are independent to each other 
+counterA(); // 1
+counterA(); // 2
+console.log("---------------------"); 
+counterB(); // 1
+counterB(); // 2
+counterB(); //3
